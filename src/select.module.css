@@ -1,0 +1,95 @@
+.container {
+    --main-color: #777;
+    position: relative;
+    width: 20em;
+    min-height: 1.5em;
+    border: 0.05em solid var(--main-color);
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+    padding: 0.5em;
+    border-radius: 0.25em;
+    outline: none;
+}
+.container:focus {
+    border-color: hsl(200, 100%, 50%);
+}
+
+.value {
+    flex-grow: 1;
+    display: flex;
+    gap: 0.5em;
+    flex-wrap: wrap;
+}
+.divider {
+    background-color: var(--main-color);
+    align-self: stretch;
+    width: 0.05em;
+}
+.clear-btn {
+    background: none;
+    color: var(--main-color);
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 0;
+    font-size: 1.25em;
+}
+.caret {
+    border: 0.25em solid transparent;
+    border-top-color: var(--main-color);
+    translate: 0 25%;
+}
+.options {
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: none;
+    max-height: 15em;
+    overflow-y: auto;
+    width: 100%;
+    left: 0;
+    top: calc(100% + 0.25em);
+    background-color: white;
+    z-index: 100;
+    border: 0.05em solid var(--main-color);
+}
+.options.show {
+    display: block;
+}
+.option {
+    padding: 00.25em 00.5em;
+    cursor: pointer;
+}
+.option.highlighted {
+    background-color: hsl(200, 100%, 50%);
+    color: white;
+}
+.option.selected {
+    background-color: hsl(200, 100%, 70%);
+    color: white;
+}
+.badge {
+    display: flex;
+    align-items: center;
+    border: 0.05em solid var(--main-color);
+    padding: 0.15em 0.25em;
+    gap: 0.25em;
+    cursor: pointer;
+    background: none;
+    outline: none;
+}
+.badge:hover,
+.badge:focus {
+    background-color: hsl(0, 100%, 90%);
+    border-color: hsl(0, 100%, 50%);
+}
+.badge:hover > .remove-btn,
+.badge:focus > .remove-btn {
+    color: hsl(0, 100%, 50%);
+}
+.badge > .remove-btn {
+    color: var(--main-color);
+    font-size: 1.25em;
+}
